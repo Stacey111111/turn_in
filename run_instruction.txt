@@ -1,0 +1,45 @@
+docker exec -it remote_pc_humble bash
+cd Downloads
+git clone https://github.com/Stacey111111/lastone.git
+
+docker cp publisher.py remote_pc_humble:/root/
+docker cp best.pt remote_pc_humble:/root/
+
+
+python3 publisher.py
+
+
+ros2 launch turtlebot3_manipulation_bringup hardware.launch.py
+python3 controller2.py
+
+
+
+
+git clone https://github.com/Stacey111111/lasttwo.git
+
+docker cp new_publisher.py remote_pc_humble:/root/
+docker cp best2.pt remote_pc_humble:/root/
+
+python3 new_publisher.py
+
+ros2 launch turtlebot3_manipulation_bringup hardware.launch.py
+python3 new_controller.py
+
+
+
+git clone https://github.com/Stacey111111/turn_in.git
+
+docker cp dual_model_publisher.py remote_pc_humble:/root/
+docker cp best.pt remote_pc_humble:/root/
+docker cp best2.pt remote_pc_humble:/root/
+
+python3 dual_model_publisher.py
+
+ros2 launch turtlebot3_manipulation_bringup hardware.launch.py
+
+python3 dual_model_controller.py
+
+
+
+
+
